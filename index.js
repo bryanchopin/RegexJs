@@ -189,7 +189,24 @@ function main(){
     var expresion6 =  /^\w+([\.\+\-]?\w+)*@([\.-]?\w+)*(\.\w{2,4})+$/;
     console.log(expresion6.test('bryan.oliveros.ibfk@gmail.com') + " RESPUESTA DE correo");
 
-    
+    var expresion6 = /^[0-9]*(\.?)[ 0-9]+$/;
+    console.log(expresion6.test("3842938492"));
 
-    numero correo url identificador
+    // numero correo url identificador
 }
+
+
+function alerta(){
+    let text = document.getElementById('text')
+    document.getElementById("btn").onclick = function(){
+
+         let correo = /^\w+([\.\+\-]?\w+)*@([\.-]?\w+)*(\.\w{2,4})+$/;
+         let url = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \?=.-]*)*\/?$/;
+         let numero = /^[0-9]*(\.?)[ 0-9]+$/;
+         let identificador = /^[A-Za-z0-9\s]+$/;
+
+        url.test(text.value) ?  alert(" LA EXPRESION ES UNA URL") : correo.test(text.value) ? alert(" LA EXPRESION ES UN CORREO") : numero.test(text.value) ? alert("LA EXPRESION ES UN NUMERO") : identificador.test(text.value) ? alert("LA EXPRESION ES UN IDENTIFICADOR") : alert("INGRESE OTRA EXPRESION");
+    }
+}
+
+alerta();
